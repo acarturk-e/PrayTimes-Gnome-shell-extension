@@ -1,0 +1,15 @@
+{
+  "name": "Prayer Times",
+  "description": "Display daily Muslim prayer times with accurate calculations, multiple locations, and GNOME-native preferences. Ported from PrayTimes.org",
+  "uuid": "praytimes-gnome-desktop@praytimes",
+  "version": 0.1,
+  "author": "Emre Acartürk",
+  "url": "https://github.com/acarturk-e/PrayTimes-gnome-shell-extension",
+  "settings-schema": "org.gnome.shell.extensions.praytimes",
+  "shell-version": [
+    "45",
+    "46", 
+    "47",
+    "48"
+  ]
+}

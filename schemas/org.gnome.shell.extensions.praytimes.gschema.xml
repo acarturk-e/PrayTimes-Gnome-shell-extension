@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.praytimes" path="/org/gnome/shell/extensions/praytimes/">
+    
+    <!-- Location Settings (General Tab) -->
+    <key name="location-latitude" type="d">
+      <default>41.0082</default>
+      <summary>Location Latitude</summary>
+      <description>Latitude coordinate for prayer time calculation</description>
+    </key>
+    
+    <key name="location-longitude" type="d">
+      <default>28.9784</default>
+      <summary>Location Longitude</summary>
+      <description>Longitude coordinate for prayer time calculation</description>
+    </key>
+    
+    <key name="location-address" type="s">
+      <default>"Istanbul, Turkey"</default>
+      <summary>Location Address</summary>
+      <description>Human-readable address for display</description>
+    </key>
+    
+    <!-- Multiple Locations Support -->
+    <key name="saved-locations" type="s">
+      <default>'[{"address":"Istanbul, Turkey","lat":41.0082,"lng":28.9784}]'</default>
+      <summary>Saved Locations</summary>
+      <description>JSON array of saved location objects with address, lat, lng</description>
+    </key>
+    
+    <key name="current-location-index" type="i">
+      <default>0</default>
+      <summary>Current Location Index</summary>
+      <description>Index of currently selected location in saved-locations array</description>
+    </key>
+    
+    <!-- Timezone (General Tab) -->
+    <key name="timezone-manual" type="b">
+      <default>false</default>
+      <summary>Manual Timezone</summary>
+      <description>Set timezone manually instead of using system default</description>
+    </key>
+    
+    <key name="timezone-offset" type="d">
+      <default>3.0</default>
+      <summary>Timezone Offset</summary>
+      <description>Timezone offset from UTC in hours (supports decimal like 3.5)</description>
+    </key>
+    
+    <key name="timezone-daylight" type="b">
+      <default>false</default>
+      <summary>Daylight Saving</summary>
+      <description>Add daylight saving time</description>
+    </key>
+    
+    <!-- Display Settings (Display Tab) -->
+    <key name="display-format" type="s">
+      <choices>
+        <choice value="12-hours"/>
+        <choice value="24-hours"/>
+      </choices>
+      <default>"12-hours"</default>
+      <summary>Time Display Format</summary>
+      <description>Format for displaying prayer times</description>
+    </key>
+    
+    <!-- Show Times (Display Tab) -->
+    <key name="show-fajr" type="b">
+      <default>true</default>
+      <summary>Show Fajr</summary>
+    </key>
+    
+    <key name="show-sunrise" type="b">
+      <default>true</default>
+      <summary>Show Sunrise</summary>
+    </key>
+    
+    <key name="show-dhuhr" type="b">
+      <default>true</default>
+      <summary>Show Dhuhr</summary>
+    </key>
+    
+    <key name="show-asr" type="b">
+      <default>true</default>
+      <summary>Show Asr</summary>
+    </key>
+    
+    <key name="show-sunset" type="b">
+      <default>false</default>
+      <summary>Show Sunset</summary>
+    </key>
+    
+    <key name="show-maghrib" type="b">
+      <default>true</default>
+      <summary>Show Maghrib</summary>
+    </key>
+    
+    <key name="show-isha" type="b">
+      <default>true</default>
+      <summary>Show Isha</summary>
+    </key>
+    
+    <key name="show-midnight" type="b">
+      <default>false</default>
+      <summary>Show Midnight</summary>
+    </key>
+    
+    <!-- Calculation Method (Calculation Tab) -->
+    <key name="calculation-method" type="s">
+      <choices>
+        <choice value="MWL"/>
+        <choice value="ISNA"/>
+        <choice value="Egypt"/>
+        <choice value="Makkah"/>
+        <choice value="Karachi"/>
+        <choice value="Tehran"/>
+        <choice value="Jafari"/>
+        <choice value="Custom"/>
+      </choices>
+      <default>"MWL"</default>
+      <summary>Calculation Method</summary>
+      <description>Method used for prayer time calculation</description>
+    </key>
+    
+    <!-- Custom Calculation Parameters (Calculation Tab) -->
+    <key name="custom-fajr" type="d">
+      <default>18.0</default>
+      <summary>Custom Fajr Angle</summary>
+      <description>Fajr angle in degrees for custom method</description>
+    </key>
+    
+    <key name="custom-maghrib" type="d">
+      <default>0.0</default>
+      <summary>Custom Maghrib</summary>
+      <description>Maghrib minutes after sunset or degrees</description>
+    </key>
+    
+    <key name="custom-maghrib-unit" type="s">
+      <choices>
+        <choice value="degrees"/>
+        <choice value="minutes"/>
+      </choices>
+      <default>"minutes"</default>
+      <summary>Maghrib Unit</summary>
+    </key>
+    
+    <key name="custom-isha" type="d">
+      <default>17.0</default>
+      <summary>Custom Isha</summary>
+      <description>Isha angle in degrees or minutes after Maghrib</description>
+    </key>
+    
+    <key name="custom-isha-unit" type="s">
+      <choices>
+        <choice value="degrees"/>
+        <choice value="minutes"/>
+      </choices>
+      <default>"degrees"</default>
+      <summary>Isha Unit</summary>
+    </key>
+    
+    <key name="custom-midnight" type="s">
+      <choices>
+        <choice value="Standard"/>
+        <choice value="Jafari"/>
+      </choices>
+      <default>"Standard"</default>
+      <summary>Midnight Calculation</summary>
+    </key>
+    
+    <!-- Other Calculation Settings (Calculation Tab) -->
+    <key name="dhuhr-minutes" type="i">
+      <default>0</default>
+      <summary>Dhuhr Minutes</summary>
+      <description>Minutes after mid-day for Dhuhr</description>
+    </key>
+    
+    <key name="asr-method" type="s">
+      <choices>
+        <choice value="Standard"/>
+        <choice value="Hanafi"/>
+      </choices>
+      <default>"Standard"</default>
+      <summary>Asr Calculation Method</summary>
+    </key>
+    
+    <key name="high-latitude-adjustment" type="s">
+      <choices>
+        <choice value="NightMiddle"/>
+        <choice value="OneSeventh"/>
+        <choice value="AngleBased"/>
+        <choice value="None"/>
+      </choices>
+      <default>"NightMiddle"</default>
+      <summary>High Latitude Adjustment</summary>
+      <description>Adjustment method for higher latitudes</description>
+    </key>
+    
+    <!-- Alerts/Notifications (Alerts Tab) -->
+    <key name="prenotification-enabled" type="b">
+      <default>false</default>
+      <summary>Pre-notification</summary>
+      <description>Display notification before prayer times</description>
+    </key>
+    
+    <key name="prenotification-minutes" type="i">
+      <default>10</default>
+      <summary>Pre-notification Minutes</summary>
+      <description>Minutes before prayer time to show notification</description>
+    </key>
+    
+    <key name="notification-enabled" type="b">
+      <default>true</default>
+      <summary>Prayer Time Notifications</summary>
+      <description>Display notification at prayer times</description>
+    </key>
+    
+    <key name="notification-text" type="s">
+      <default>"It is time to pray"</default>
+      <summary>Notification Text</summary>
+      <description>Text to display in prayer time notifications</description>
+    </key>
+    
+    <key name="countdown-enabled" type="b">
+      <default>true</default>
+      <summary>Show Countdown</summary>
+      <description>Show countdown in extension badge</description>
+    </key>
+    
+    <key name="countdown-minutes" type="i">
+      <default>10</default>
+      <summary>Countdown Minutes</summary>
+      <description>Show countdown when this many minutes remain</description>
+    </key>
+    
+    <!-- Sound Settings (Sound Tab) -->
+    <key name="adhan-enabled" type="b">
+      <default>false</default>
+      <summary>Play Adhan</summary>
+      <description>Play adhan sound at prayer times</description>
+    </key>
+    
+    <key name="sound-volume" type="i">
+      <default>70</default>
+      <summary>Sound Volume</summary>
+      <description>Volume level for adhan playback (0-100)</description>
+    </key>
+    
+  </schema>
+</schemalist>

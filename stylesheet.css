@@ -1,0 +1,46 @@
+/* Prayer Times GNOME Shell Extension Styles */
+
+.popup-subtitle-menu-item {
+    font-weight: bold;
+    color: #888;
+}
+
+.popup-title {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+.popup-menu-item-next {
+    font-weight: bold;
+    color: #4a90e2;
+}
+
+.praytimes-panel-label {
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+/* Prayer Times Table Styles */
+.prayer-time-row {
+    padding: 2px 0px;
+}
+
+.prayer-name {
+    font-weight: normal;
+    color: #ccc;
+    min-width: 80px;
+    text-align: left;
+}
+
+.prayer-time {
+    font-weight: normal;
+    color: #fff;
+    font-family: monospace;
+    text-align: right;
+}
+
+.prayer-next {
+    font-weight: bold !important;
+    color: #4a90e2 !important;
+}
